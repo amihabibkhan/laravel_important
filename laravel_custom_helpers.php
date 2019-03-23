@@ -17,3 +17,8 @@
             "database/factories"
         ]
     },
+
+
+// command this
+
+composer dump-autoload
