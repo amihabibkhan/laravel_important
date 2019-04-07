@@ -1,5 +1,6 @@
 <?php
 
 public function make_slug($string) {
-    return preg_replace('/\s+/u', '-', trim($string));
+    $make_string = str_replace('?', ' ', $string);
+    return preg_replace('/\s+/u', '-', trim($make_string));
 }
