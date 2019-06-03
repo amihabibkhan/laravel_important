@@ -18,3 +18,7 @@ QUEUE_DRIVER=database instead of QUEUE_CONNECTION=database
 
 class PlaceOrderNotification extends Notification implements ShouldQueue
 
+// we can change default sender from config/mail.php
+
+// to send with custom template
+return (new MailMessage)->view('mail.to_admin', ['order' => $this->order]);
