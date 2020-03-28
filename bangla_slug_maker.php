@@ -1,6 +1,11 @@
 <?php
 
-public function make_slug($string) {
-    $make_string = str_replace('?', ' ', $string);
-    return preg_replace('/\s+/u', '-', trim($make_string));
+function slug_maker($text){
+    // creating slug
+    $remove_question = str_replace('?', ' ', $text);
+    $remove_slash = str_replace('/', ' ', $remove_question);
+    $slug = preg_replace('/\s+/u', '-', trim($remove_slash));
+    return $slug;
 }
+
+// in laravel we can use it as a helper function in helper.php
