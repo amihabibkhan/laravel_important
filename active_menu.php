@@ -23,3 +23,6 @@ function diff_value_pass_menu_active($route, $segment, $segment_value){
         return 'active';
     }
 }
+
+// with a check by segment
+{{ (Request::is('*/blog/*')) ? 'active' : '' }}
