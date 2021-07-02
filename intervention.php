@@ -10,11 +10,11 @@ $public_path = public_path('storage/' . $storage_path);
 
 // resize
 $img = Image::make($public_path)->resize(width,heidth,callback);
-
-//crop by squre size
-$public_path = public_path('storage/' . $path);
-$width = Image::make($public_path)->width();
-Image::make($public_path)->crop($width, $width)->resize(200,200)->save($public_path);
+ 
+//crop by square size
+$user->profile_pic = $request->file('profile_picture')->store('profile_picture');
+$public_path = public_path('storage/' . $user->profile_pic);
+Image::make($public_path)->fit(200, 200)->save($public_path);
 
 // crop by not squre size but defined aspect size
   $img = Image::make($public_path);
